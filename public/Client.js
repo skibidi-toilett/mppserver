@@ -1,3 +1,7 @@
+if (typeof window === "undefined") {
+    global.WebSocket = require("ws");
+    global.localStorage = { token: null }; // Dummy localStorage for Node.js
+}
 WebSocket.prototype.send = new Proxy(WebSocket.prototype.send, {
     apply: (target, thisArg, args) => {
         if (localStorage.token && !args[0].startsWith(`[{"m":"hi"`)) args[0] = args[0].replace(localStorage.token, "[REDACTED]");

@@ -2,14 +2,6 @@ services:
   - name: diddy-runner
     type: web
     env: node
-    buildCommand: |
-      curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-      export NVM_DIR="$HOME/.nvm"
-      mkdir -p $NVM_DIR
-      [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-      nvm install 16
-      nvm use 16
-      npm install
     startCommand: "node Diddy.js"
     autoDeploy: true
     rootDir: .

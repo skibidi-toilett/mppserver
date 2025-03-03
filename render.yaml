@@ -1,0 +1,11 @@
+services:
+  - name: diddy-runner
+    type: web
+    env: node
+    buildCommand: "npm install"
+    startCommand: "node Diddy.js"
+    autoDeploy: true
+    rootDir: .
+    envVars:
+      - key: NODE_ENV
+        value: production

@@ -1,9 +1,0 @@
-{
-  "entry": "Diddy.js",
-  "watch": ["./public", "./protocol", "./fun"],
-  "run": "node Diddy.js",
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "ignore": ["node_modules", "logs"]
-}
